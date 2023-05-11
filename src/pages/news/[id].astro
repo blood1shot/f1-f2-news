@@ -1,0 +1,9 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import NewsDetails from "@src/components/NewsDetails.vue";
+
+const { id } = Astro.params;
+---
+<MainLayout title="News Details">
+	<NewsDetails newsId={id} client:only/>
+</MainLayout>

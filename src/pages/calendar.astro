@@ -1,0 +1,9 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import Calendar from "@src/components/Calendar.vue";
+---
+
+<MainLayout title="Calendar">
+	<h1 class="text-3xl text-center font-semibold mb-8">Calendar</h1>
+	<Calendar client:only/>
+</MainLayout>

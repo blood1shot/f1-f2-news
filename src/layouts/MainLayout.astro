@@ -1,0 +1,46 @@
+---
+import TheHeader from "@src/components/TheHeader.vue";
+import TheSidebar from "@src/components/TheSidebar.vue";
+import TheFooter from "@src/components/TheFooter.vue";
+import "@src/assets/styles/global.scss";
+import "@fontsource/titillium-web";
+import "@fontsource/bebas-neue";
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>F2-news | {title}</title>
+	</head>
+	<body>
+		<div class="home-wrapper">
+      <TheHeader/>
+      <div class="main-content__wrapper">
+        <TheSidebar/>
+        <div class="main-content">
+          <slot/>
+        </div>
+      </div>
+      <TheFooter/>
+    </div>
+	</body>
+</html>
+<style lang="scss">
+.main-content {
+  width: 100%;
+  padding: 40px 40px 60px 40px;
+  &__wrapper {
+    display: flex;
+  }
+}
+</style>
